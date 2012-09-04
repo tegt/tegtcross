@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strick.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/tegtcross.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/le-frog/jquery-ui-1.8.9.custom.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/tegtword/jquery-ui-1.8.9.custom.css"/>
+
+<!--  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+-->
+    <script src="js/jquery-1.4.4.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+<!--  
+    <script src="js/jquery-ui-1.8.11.custom.js" type="text/javascript"></script>
+-->
+    <script src="js/tcgt.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      $(function(){
+	  $('#tegtword').tcgt();
+      });
+
+</script>
+<title>Tegtcross Word test</title>
+  </head>
+  <body class="ui-widget">
+
+    <p>Test container for tegtCross div</p>
+    <button onclick="$('.grid').show();$('#tegtword').tcgt('mode','grid')">grid</button>
+    <button onclick="$('.grid').hide();$('#tegtword').tcgt('mode','clue')">clue</button>
+    <button onclick="$('.grid').hide();$('#tegtword').tcgt('mode','play')">play</button>
+    
+    <table><tr><td colspan="3" align="center">
+	  <button class="grid" onclick="$('#tegtword').tcgt('edge','top',1)">+</button>
+	  <button class="grid" onclick="$('#tegtword').tcgt('edge','top',-1)">-</button>
+      </td></tr>
+      <tr><td>
+	  <button class="grid" onclick="$('#tegtword').tcgt('edge','left',1)">+</button>
+	  <button class="grid" onclick="$('#tegtword').tcgt('edge','left',-1)">-</button>
+	</td><td>
+	  <div id="tegtword" class="ui-widget"/>
+      </td><td>
+	  <button class="grid" onclick="$('#tegtword').tcgt('edge','right',1)">+</button>
+	  <button class="grid" onclick="$('#tegtword').tcgt('edge','right',-1)">-</button>
+      </td></tr>
+      <tr><td colspan="3" align="center">
+	<button class="grid" onclick="$('#tegtword').tcgt('edge','bottom',1)">+</button>
+	<button class="grid" onclick="$('#tegtword').tcgt('edge','bottom',-1)">-</button>
+    </td></tr></table>
+    <table>
+      <tr><td>
+	  Across: <div id="aclue-tegtword"></div></td></tr>
+      <tr><td>
+	  <input type="text" size="80" id="aclue-in-tegtword" />
+	  <div id="aclue-text-tegtword"></div>
+      </td></tr>
+      <tr><td>
+	  Down: <div id="dclue-tegtword"></div></td></tr>
+      <tr><td>
+	  <input type="text" size="80" id="dclue-in-tegtword" />
+	  <div id="dclue-text-tegtword"></div>
+      </td></tr>
+      <tr><td>
+	  <br/>
+	  Filename: <input type="text" size="12" id="nameIt" /></td></tr>
+      <tr><td>
+	  <button onclick="$('#tegtword').tcgt('post','tcgtpost.php',$('#nameIt').val())">Save Crossword</button></td></tr>
+    </table>
+  </body>
+</html>
+

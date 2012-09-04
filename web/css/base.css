@@ -1,0 +1,29 @@
+/* -*-css-*- */
+body {
+    margin: 8px;
+}
+
+img { border: 0 }
+
+.hide {
+    display: none;
+}
+
+.inline {
+    margin-top: .5em;
+    display: inline-block;
+    text-align: left;
+}
+
+th {text-align: center; padding: 0.2em;}
+td {padding: 0.2em;}
+
+.guard  {clear: both; display: inline;}
+
+
+.hunkblock {display: block; float: left; margin-right: .5em;}
+
+.hunkinline {display: inline; float: left; margin-right: .5em;}
+
+body {background-color: #dddddd;}
+
